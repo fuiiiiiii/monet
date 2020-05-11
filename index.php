@@ -13,6 +13,24 @@
 </head>
 
 <body>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <img id="monetShow" src="" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="menu_c">
         <ul>
             <li><a data-scroll href="#the_artist">The Artist</a></li>
@@ -27,7 +45,7 @@
         <a class="logo" href="#top" data-scroll><img src="img/monet_logo.png"></a>
         <div class="search_c">
             <input type="text" name="search" id="search">
-            <input type="submit" value="SEARCH">
+            <input type="submit" id="searchBtn" value="SEARCH">
         </div>
         <div class="mobile_menu_c">
             <nav class="navbar navbar-default">
@@ -248,10 +266,41 @@
     <a data-scroll href="#the_artist" class="scroll_down"><img src="img/scrolldown.png" style="max-width: 13px;"></a>
     <p class="copyright">© Copyright Iris Cheong 2019</p>
 
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="js/custom.js"></script>
+
+    <script>
+        $(function() {
+
+            $("#searchBtn").click(function() {
+                let val = $("#search").val()
+                console.log(val)
+                if (val.trim()) {
+                    $.ajax({
+                        url: './getPicture.php?name='+val,
+                        success: function(data) {
+                            if (data) {
+                                data = JSON.parse(data)
+                            }
+                            if (data.code == 200) {
+                                let imgname = data.data[0].id
+                                $("#monetShow").attr("src", `./img/monet/${imgname}.jpg`);
+                                $('#myModal').modal('show')
+                            } else {
+                                alert('未查询到相关作品')
+                            }
+                        }
+                    })
+                }
+            });
+            // $('#myModal').modal('show')
+        })
+    </script>
 </body>
 
 </html>
