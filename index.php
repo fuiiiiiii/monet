@@ -282,18 +282,19 @@
                 console.log(val)
                 if (val.trim()) {
                     $.ajax({
-                        url: './getPicture.php?name='+val,
+                        url: './getPicture.php?name=' + val,
                         success: function(data) {
                             if (data) {
                                 data = JSON.parse(data)
                             }
-                            if (data.code == 200) {
+                            if (data.code == 200 && data.data.length > 0) {
                                 let imgname = data.data[0].id
                                 $("#monetShow").attr("src", `./img/monet/${imgname}.jpg`);
                                 $('#myModal').modal('show')
                             } else {
-                                alert('未查询到相关作品')
+                                alert('No relevant works were found')
                             }
+                            $("#search").val('')
                         }
                     })
                 }
