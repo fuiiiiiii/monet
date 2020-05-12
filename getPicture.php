@@ -9,7 +9,7 @@ if (empty($params)) {
   exit();
 }
 $params = strtolower($params);
-$serve = 'mysql:host=172.16.32.2:3306;dbname=monet;charset=utf8';
+$serve = 'mysql:host=cdb-qq35tjif.gz.tencentcdb.com:10124;dbname=monet';
 $username = 'root';
 $password = 'fuiii967###';
 // phpinfo()
