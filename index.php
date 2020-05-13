@@ -20,7 +20,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel"></h4>
+                    <h4 class="modal-title" id="myModalLabel">
+
+                    </h4>
                 </div>
                 <div class="modal-body">
                     <img id="monetShow" src="" />
@@ -46,6 +48,7 @@
         <div class="search_c">
             <input type="text" name="search" id="search">
             <input type="submit" id="searchBtn" value="SEARCH">
+            <div class="searchdesc">Check out Monet’s most famous paintings</div>
         </div>
         <div class="mobile_menu_c">
             <nav class="navbar navbar-default">
@@ -288,8 +291,13 @@
                                 data = JSON.parse(data)
                             }
                             if (data.code == 200 && data.data.length > 0) {
-                                let imgname = data.data[0].id
-                                $("#monetShow").attr("src", `./img/monet/${imgname}.jpg`);
+                                let {
+                                    id,
+                                    title
+                                } = data.data[0]
+                                console.log(id, title)
+                                $("#myModalLabel").html(data.data[0].title)
+                                $("#monetShow").attr("src", `./img/monet/${id}.jpg`);
                                 $('#myModal').modal('show')
                             } else {
                                 alert('No relevant works were found')

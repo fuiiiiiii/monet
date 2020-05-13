@@ -2,54 +2,72 @@
     font-family: 'Caveat_R';
     src: url("../fonts/caveat-regular.ttf");
 }
+
 @font-face {
     font-family: 'Montserrat_R';
     src: url("../fonts/Montserrat-Regular.ttf");
 }
+
 @font-face {
     font-family: 'Montserrat_L';
     src: url("../fonts/Montserrat-Light.ttf");
 }
+
 @font-face {
     font-family: 'Montserrat_SB';
     src: url("../fonts/Montserrat-SemiBold.ttf");
 }
+
 @font-face {
     font-family: 'Montserrat_B';
     src: url("../fonts/Montserrat-Bold.ttf");
 }
 
-body{
-    color:#78797D;
+body {
+    color: #78797D;
     font-family: Montserrat_L;
     font-size: 16px;
+    zoom: 80%;
+    -moz-transform: scale(0.8);
+    transform-origin: center top;
+
+    /* -moz-transform:scale(0.8);
+    -o-transform:scale(0.8);
+    -webkit-transform:scale(0.8); */
 }
-:focus{
-    outline:unset;
+
+:focus {
+    outline: unset;
 }
-h1{
+
+h1 {
     font-size: 40px;
     font-family: Montserrat_B;
 }
-h2{
+
+h2 {
     font-size: 20px;
     font-family: Montserrat_R;
 }
-li{
+
+li {
     list-style: none;
 }
-a:hover{
+
+a:hover {
     text-decoration: none;
 }
-img{
+
+img {
     width: 100%;
 }
-section{
-    padding:95px 1% 75px;
-    margin:0 0 1%;
+
+section {
+    padding: 95px 1% 75px;
+    margin: 0 0 1%;
 }
 
-.menu_c{
+.menu_c {
     position: fixed;
     top: calc(50% - 110px);
     left: 0;
@@ -58,19 +76,35 @@ section{
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.menu_c ul{
+
+.menu_c ul {
     padding-left: 0;
 }
-.menu_c a{
+
+.menu_c a {
     color: #78797d;
     line-height: 2.5em;
     font-family: Montserrat_SB;
 }
-.menu_c a:hover{
-    font-weight: bold;
-    color:#000;
+
+.search_c {
+    position: relative;
 }
-.top_arrow{
+
+.searchdesc {
+    font-size: 12px;
+    position: absolute;
+    width: 350px;
+    right: 0px;
+    text-align: right;
+}
+
+.menu_c a:hover {
+    font-weight: bold;
+    color: #000;
+}
+
+.top_arrow {
     position: fixed;
     bottom: 13%;
     right: 0;
@@ -85,7 +119,8 @@ section{
     background: #ffffff;
     border-radius: 3px;
 }
-.copyright{
+
+.copyright {
     position: fixed;
     bottom: 3%;
     right: 0;
@@ -96,14 +131,16 @@ section{
     font-size: 15px;
     margin-right: 1em;
 }
-.top_arrow img{
+
+.top_arrow img {
     margin-bottom: 7px;
 }
 
-.logo img{
+.logo img {
     max-width: 250px;
 }
-header{
+
+header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -111,7 +148,8 @@ header{
     width: 100%;
     top: 0;
 }
-header p{
+
+header p {
     margin: 0;
     color: #000000;
     font-style: italic;
@@ -120,16 +158,17 @@ header p{
     font-family: Montserrat_B;
 }
 
-header input{
+header input {
     border: 0;
     border-bottom: 1px solid;
 }
 
-#top img{
+#top img {
     width: 57%;
     margin-left: 13%;
 }
-.top_txt1{
+
+.top_txt1 {
     font-family: Caveat_R;
     font-size: 50px;
     position: absolute;
@@ -138,7 +177,8 @@ header input{
     transform: translate(13%, -50%);
     color: #000;
 }
-.top_txt2{
+
+.top_txt2 {
     font-family: Caveat_R;
     font-size: 40px;
     max-width: 900px;
@@ -149,27 +189,32 @@ header input{
     transform: translate(-50%, 17%);
     color: #000;
 }
-#the_artist{
+
+#the_artist {
     background: #DDE7F3;
 }
+
 #exhibition,
-#gallery{
+#gallery {
     background: radial-gradient(#151515, #151515);
 }
-#derivative p{
+
+#derivative p {
     font-size: 15px;
     max-width: 443px;
-    color:#000;
+    color: #000;
 }
+
 #contact p {
     color: #000;
 }
-.mobile_c{
+
+.mobile_c {
     display: none;
 }
 
 /*carousel*/
-#myCarousel .carousel-control.left{
+#myCarousel .carousel-control.left {
     transform: rotate(90deg);
     left: auto;
     right: 0;
@@ -177,7 +222,8 @@ header input{
     bottom: auto;
     z-index: 2;
 }
-#myCarousel .carousel-control.right{
+
+#myCarousel .carousel-control.right {
     transform: rotate(90deg);
     left: auto;
     right: 0;
@@ -185,7 +231,8 @@ header input{
     top: auto;
     z-index: 2;
 }
-#myCarousel .carousel-indicators{
+
+#myCarousel .carousel-indicators {
     top: 8%;
     width: 60%;
     transform: rotate(90deg);
@@ -194,32 +241,43 @@ header input{
     left: auto;
     z-index: 1;
 }
-.mobile_menu_c{
+
+.mobile_menu_c {
     display: none;
 }
-.scroll_down{
+
+.scroll_down {
     padding: 7px;
     border-radius: 3px;
     position: fixed;
     right: 1em;
     top: 45%;
 }
-.close_menu{
+
+.close_menu {
     position: absolute;
     top: 7px;
     right: 25px;
 }
-.close_menu i{
+
+.close_menu i {
     font-size: 25px;
 }
-input[type="submit"]{
+
+input[type="submit"] {
     background: none;
     border: none;
     font-weight: bold;
 }
 
-@media (max-width: 767px){
-    .navbar-default .navbar-collapse{
+@media (max-width: 767px) {}
+
+@media (max-width: 767px) {
+    body {
+        zoom: 100%;
+    }
+
+    .navbar-default .navbar-collapse {
         position: fixed;
         top: 0;
         left: 0;
@@ -229,108 +287,139 @@ input[type="submit"]{
         text-align: center;
         padding: 15% 0;
     }
-    header{
+
+    header {
         position: fixed;
         z-index: 2;
         background: #fff;
         box-shadow: 1px 1px 5px 4px #e2e2e2;
         padding: 4.7% 2%;
     }
-    header a{
+
+    header a {
         margin: 1% 0;
     }
-    .logo{
+
+    .logo {
         max-width: 121px;
     }
-    .top_txt1{
-        right: 7%;
-        bottom: 7%;
-        font-size: 23px;
-    }
-    .top_txt2{
-        bottom: -21%;
-        font-size: 19px;
-    }
-    #top img {
-        width: 83%;
-        margin-left: -7%;
-    }
-    section img{
-        max-width: 100% !important;
-        margin-bottom: 37px;
-    }
-    section {
-        padding: 21px 1em 27px;
-    }
-    h1{
-        font-size: 23px !important;
-        color:#000 !important;
-    }
-    h2{
-        font-size: 18px !important;
-    }
-    p{
-        font-size: 14px;
-    }
-    #exhibition, #gallery{
-        background: #fff;
-    }
-    #top{
-        margin-top:71px;
-        padding: 71px 1em 134px;
-    }
-    .menu_c{
-        display:none;
-    }
 
-    .mobile_menu_c{
+    .mobile_menu_c {
         display: block;
     }
-    .mobile_menu_c nav{
+
+    .mobile_menu_c nav {
         margin-bottom: 0;
         border: none;
         background: transparent;
         text-align: left;
     }
-    .navbar{
+
+    .top_txt1 {
+        right: 7%;
+        bottom: 7%;
+        font-size: 23px;
+    }
+
+    .top_txt2 {
+        bottom: -21%;
+        font-size: 19px;
+    }
+
+    #top img {
+        width: 83%;
+        margin-left: -7%;
+    }
+
+    section img {
+        max-width: 100% !important;
+        margin-bottom: 37px;
+    }
+
+    section {
+        padding: 21px 1em 27px;
+    }
+
+    h1 {
+        font-size: 23px !important;
+        color: #000 !important;
+    }
+
+    h2 {
+        font-size: 18px !important;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    #exhibition,
+    #gallery {
+        background: #fff;
+    }
+
+    #top {
+        margin-top: 71px;
+        padding: 71px 1em 134px;
+    }
+
+    .menu_c {
+        display: none;
+    }
+
+
+    .navbar {
         min-height: 27px;
     }
-    .navbar-default .navbar-toggle{
-        margin-top:0;
-        margin-bottom:0;
+
+    .navbar-default .navbar-toggle {
+        margin-top: 0;
+        margin-bottom: 0;
     }
-    .navbar-collapse{
-        border:none;
+
+    .navbar-collapse {
+        border: none;
     }
-    .navbar-toggle{
+
+    .navbar-toggle {
         margin-right: 0px;
         border: none;
     }
+
     .navbar-default .navbar-toggle .icon-bar {
         background-color: #b3c7e0;
     }
+
     header p,
-    .search_c{
+    .search_c {
         display: none;
+        position: relative;
     }
-    .scroll_down{
-        right:0em;
+
+    .scroll_down {
+        right: 0em;
     }
-    .top_arrow{
+
+    .top_arrow {
         margin-right: 0em;
     }
-    .desktop_c{
+
+    .desktop_c {
         display: none;
     }
-    .mobile_c{
+
+    .mobile_c {
         display: block;
     }
-    #the_art img{
+
+    #the_art img {
         margin-bottom: 11%;
     }
-    #exhibition h1 span:first-child{
+
+    #exhibition h1 span:first-child {
         font-size: 18px;
     }
+
     #gallery h2 span {
         font-family: Montserrat_L;
         font-weight: 300 !important;
