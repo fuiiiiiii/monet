@@ -86,7 +86,9 @@ section {
     line-height: 2.5em;
     font-family: Montserrat_SB;
 }
-
+#search {
+    width: 231px;
+}
 .search_c {
     position: relative;
 }
@@ -94,9 +96,10 @@ section {
 .searchdesc {
     font-size: 12px;
     position: absolute;
-    width: 350px;
+
     right: 0px;
-    text-align: right;
+    text-align: left;
+    bottom: -30px;
 }
 
 .menu_c a:hover {
